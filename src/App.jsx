@@ -33,27 +33,53 @@
 
 
 
-import BookShelf from "./components/bookShelf";
+// import BookShelf from "./components/bookShelf";
 
-export default function App() {
-  const books = [
-    { id: 1, title: "JavaScript: The Good Parts", author: "Douglas Crockford", year: 2008, isAvailable: true, genre: "Programming" },
-    { id: 2, title: "Eloquent JavaScript", author: "Marijn Haverbeke", year: 2011, isAvailable: false, genre: "Programming" },
-    { id: 3, title: "You Don't Know JS", author: "Kyle Simpson", year: 2015, isAvailable: true, genre: "Programming" },
-    { id: 4, title: "Clean Code", author: "Robert C. Martin", year: 2008, isAvailable: true, genre: "Software Engineering" },
-    { id: 5, title: "The Pragmatic Programmer", author: "Andrew Hunt, David Thomas", year: 1999, isAvailable: false, genre: "Software Engineering" },
-  ];
+// export default function App() {
+//   const books = [
+//     { id: 1, title: "JavaScript: The Good Parts", author: "Douglas Crockford", year: 2008, isAvailable: true, genre: "Programming" },
+//     { id: 2, title: "Eloquent JavaScript", author: "Marijn Haverbeke", year: 2011, isAvailable: false, genre: "Programming" },
+//     { id: 3, title: "You Don't Know JS", author: "Kyle Simpson", year: 2015, isAvailable: true, genre: "Programming" },
+//     { id: 4, title: "Clean Code", author: "Robert C. Martin", year: 2008, isAvailable: true, genre: "Software Engineering" },
+//     { id: 5, title: "The Pragmatic Programmer", author: "Andrew Hunt, David Thomas", year: 1999, isAvailable: false, genre: "Software Engineering" },
+//   ];
 
-  const availableBooks = books.filter((b) => b.isAvailable);
-  const borrowedBooks = books.filter((b) => !b.isAvailable);
+//   const availableBooks = books.filter((b) => b.isAvailable);
+//   const borrowedBooks = books.filter((b) => !b.isAvailable);
 
+//   return (
+//     <div style={{ maxWidth: 900, margin: "40px auto", fontFamily: "Arial, sans-serif", padding: 16 }}>
+//       <h1 style={{ marginBottom: 20 }}>Library</h1>
+
+//       <BookShelf title="Доступные книги" booksData={availableBooks} />
+//       <div style={{ height: 20 }} />
+//       <BookShelf title="Книги на руках" booksData={borrowedBooks} />
+//     </div>
+//   );
+// }
+
+
+import UserProfile from "./components/userProfile";
+
+const user = {
+  name: "Анна Смирнова",
+  bio: "Фронтенд-разработчик, увлекаюсь React и современным JS.",
+  contacts: {
+    email: "anna@example.com",
+    phone: "346564786580",
+    website: "https://portfolio.annasmirnova.com",
+  },
+  skills: ["HTML/CSS", "JavaScript", "React", "Figma"],
+  isLookingForJob: true,
+};
+
+function App() {
   return (
-    <div style={{ maxWidth: 900, margin: "40px auto", fontFamily: "Arial, sans-serif", padding: 16 }}>
-      <h1 style={{ marginBottom: 20 }}>Library</h1>
-
-      <BookShelf title="Доступные книги" booksData={availableBooks} />
-      <div style={{ height: 20 }} />
-      <BookShelf title="Книги на руках" booksData={borrowedBooks} />
+    <div>
+      <UserProfile user={user} />
     </div>
   );
 }
+
+export default App;
+
